@@ -3,7 +3,6 @@ package shooterGame;
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
@@ -17,7 +16,6 @@ public class Shooter extends Application {
 
     private HashMap<KeyCode, Boolean> keys = new HashMap<>();
     Pane root = new Pane();
-//    Image image = new Image(String.valueOf(getClass().getResource("resource/image/HeroPistol.png")));
     Weapon weapon = new Pistol();
     ImageView imageView = new ImageView(weapon.getCalm());
     Hero hero = new Hero(imageView, weapon);

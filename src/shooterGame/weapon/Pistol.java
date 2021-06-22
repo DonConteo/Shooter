@@ -20,6 +20,102 @@ public class Pistol extends Weapon {
     private int reloadTime = 2000;
 
     @Override
+    public Image getCalm() {
+        return calm;
+    }
+    @Override
+    public void setCalm(Image calm) {
+        this.calm = calm;
+    }
+
+    @Override
+    public Image getShoot() {
+        return shoot;
+    }
+    @Override
+    public void setShoot(Image shoot) {
+        this.shoot = shoot;
+    }
+
+    @Override
+    public Image getReload() {
+        return reload;
+    }
+    @Override
+    public void setReload(Image reload) {
+        this.reload = reload;
+    }
+
+    @Override
+    public int getDamage() {
+        return damage;
+    }
+
+    @Override
+    public int getLoadedBullets() {
+        return loadedBullets;
+    }
+    @Override
+    public void setLoadedBullets(int loadedBullets) {
+        this.loadedBullets = loadedBullets;
+    }
+
+    @Override
+    public int getMaxBullets() {
+        return maxBullets;
+    }
+
+    @Override
+    public int getAmmo() {
+        return ammo;
+    }
+    @Override
+    public void setAmmo(int ammo) {
+        this.ammo = ammo;
+    }
+
+    @Override
+    public int getMaxAmmo() {
+        return maxAmmo;
+    }
+
+    @Override
+    public File getFireSound() {
+        return fireSound;
+    }
+    @Override
+    public void setFireSound(File fireSound) {
+        this.fireSound = fireSound;
+    }
+
+    @Override
+    public int getFireTime() {
+        return fireTime;
+    }
+    @Override
+    public void setFireTime(int fireTime) {
+        this.fireTime = fireTime;
+    }
+
+    @Override
+    public File getReloadSound() {
+        return reloadSound;
+    }
+    @Override
+    public void setReloadSound(File reloadSound) {
+        this.reloadSound = reloadSound;
+    }
+
+    @Override
+    public int getReloadTime() {
+        return reloadTime;
+    }
+    @Override
+    public void setReloadTime(int reloadTime) {
+        this.reloadTime = reloadTime;
+    }
+
+    @Override
     public void shoot() {
         if (loadedBullets > 0) {
             loadedBullets--;
