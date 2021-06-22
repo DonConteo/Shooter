@@ -17,10 +17,10 @@ public class Shooter extends Application {
 
     private HashMap<KeyCode, Boolean> keys = new HashMap<>();
     Pane root = new Pane();
-    Image calm = new Image(String.valueOf(getClass().getResource("resource/image/HeroPistol.png")));
+//    Image image = new Image(String.valueOf(getClass().getResource("resource/image/HeroPistol.png")));
     Weapon weapon = new Pistol();
     ImageView imageView = new ImageView(weapon.getCalm());
-    Hero hero = new Hero(imageView);
+    Hero hero = new Hero(imageView, weapon);
 
     public void update() {
         moveHero();

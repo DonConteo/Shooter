@@ -119,4 +119,5 @@ public abstract class Weapon implements Reloadable, Shootable {
     public void setReload(Image reload) {
         this.reload = reload;
     }
+
 }
