@@ -6,26 +6,21 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.RotateEvent;
 import javafx.scene.layout.Pane;
-import javafx.scene.transform.Rotate;
 import javafx.stage.Stage;
 import shooterGame.weapon.Pistol;
 import shooterGame.weapon.Weapon;
 
-import java.awt.*;
-import java.awt.event.*;
 import java.util.HashMap;
-import java.util.Set;
 
 public class Shooter extends Application {
 
     private HashMap<KeyCode, Boolean> keys = new HashMap<>();
     Pane root = new Pane();
-    Image image = new Image(String.valueOf(getClass().getResource("resource/Hero.png")));
-    ImageView imageView = new ImageView(image);
-    Set<Weapon> weapons;
-    Hero hero = new Hero(imageView, new Pistol(), weapons);
+    Image calm = new Image(String.valueOf(getClass().getResource("resource/image/HeroPistol.png")));
+    Weapon weapon = new Pistol();
+    ImageView imageView = new ImageView(weapon.getCalm());
+    Hero hero = new Hero(imageView);
 
     public void update() {
         moveHero();
@@ -40,6 +35,9 @@ public class Shooter extends Application {
             hero.moveX(-5);
         } else if (isPressed(KeyCode.D)) {
             hero.moveX(5);
+        }
+        if (isPressed(KeyCode.R)) {
+
         }
     }
 

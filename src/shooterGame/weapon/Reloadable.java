@@ -8,6 +8,7 @@ public interface Reloadable {
             if (weapon.getAmmo() > bulletsToReload) {
                 weapon.setLoadedBullets(weapon.getMaxBullets());
                 weapon.setAmmo(weapon.getAmmo() - bulletsToReload);
+
             } else {
                 weapon.setLoadedBullets(weapon.getLoadedBullets() + weapon.getAmmo());
                 weapon.setAmmo(0);

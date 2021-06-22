@@ -2,21 +2,13 @@ package shooterGame;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.transform.Rotate;
-import shooterGame.weapon.Weapon;
-
-import java.util.Set;
 
 public class Hero extends Pane {
 
     ImageView imageView;
-    private Weapon armedWeapon;
-    private Set<Weapon> weapons;
 
-    public Hero(ImageView imageView, Weapon armedWeapon, Set<Weapon> weapons) {
+    public Hero(ImageView imageView) {
         this.imageView = imageView;
-        this.armedWeapon = armedWeapon;
-        this.weapons = weapons;
         getChildren().addAll(imageView);
     }
 
