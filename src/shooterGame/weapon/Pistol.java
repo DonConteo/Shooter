@@ -1,6 +1,7 @@
 package shooterGame.weapon;
 
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.io.File;
 
@@ -18,6 +19,7 @@ public class Pistol extends Weapon {
     private int fireTime = 1000;
     private File reloadSound = new File("resource/sound/pistolReload.mp3");
     private int reloadTime = 2000;
+    ImageView imageView = new ImageView(calm);
 
     @Override
     public Image getCalm() {
@@ -116,9 +118,22 @@ public class Pistol extends Weapon {
     }
 
     @Override
-    public void shoot() {
-        if (loadedBullets > 0) {
-            loadedBullets--;
+    public ImageView getImageView() {
+        return imageView;
+    }
+    @Override
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
+    }
+
+    @Override
+    public void shoot(){
+        imageView.setImage(shoot);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+        imageView.setImage(calm);
     }
 }

@@ -19,7 +19,7 @@ public abstract class Weapon implements Reloadable, Shootable {
     private int fireTime;
     private File reloadSound;
     private int reloadTime;
-    private ImageView fireImage;
+    private ImageView imageView;
     private final File emptySound = new File("resource/sound/emptyWeapon.mp3");
 
     public int getDamage() {
@@ -71,13 +71,6 @@ public abstract class Weapon implements Reloadable, Shootable {
         this.reloadSound = reloadSound;
     }
 
-    public ImageView getFireImage() {
-        return fireImage;
-    }
-    public void setFireImage(ImageView fireImage) {
-        this.fireImage = fireImage;
-    }
-
     public File getEmptySound() {
         return emptySound;
     }
@@ -120,4 +113,10 @@ public abstract class Weapon implements Reloadable, Shootable {
         this.reload = reload;
     }
 
+    public ImageView getImageView() {
+        return imageView;
+    }
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
+    }
 }

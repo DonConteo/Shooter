@@ -17,7 +17,7 @@ public class Shooter extends Application {
     private HashMap<KeyCode, Boolean> keys = new HashMap<>();
     Pane root = new Pane();
     Weapon weapon = new Pistol();
-    ImageView imageView = new ImageView(weapon.getCalm());
+    ImageView imageView = weapon.getImageView();
     Hero hero = new Hero(imageView, weapon);
 
     public void update() {
@@ -54,6 +54,7 @@ public class Shooter extends Application {
             @Override
             public void handle(long now) {
                 scene.setOnMouseMoved(event -> hero.rotateHero(event.getX(), event.getY(), hero.getTranslateX(), hero.getTranslateY()));
+                scene.setOnMouseClicked(event -> hero.weapon.shoot());
                 update();
             }
         };
