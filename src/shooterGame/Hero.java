@@ -37,9 +37,29 @@ public class Hero extends Pane {
         }
     }
 
+    public void moveXY(int x, int y) {
+        boolean right = x > 0;
+        boolean down = y > 0;
+        for (int i = 0; i < Math.abs(y) && i < Math.abs(x); i++) {
+            if (down && right) {
+                this.setTranslateX(this.getTranslateX() + 1);
+                this.setTranslateY(this.getTranslateY() + 1);
+            } else if (!down && !right) {
+                this.setTranslateX(this.getTranslateX() - 1);
+                this.setTranslateY(this.getTranslateY() - 1);
+            } else if (down) {
+                this.setTranslateX(this.getTranslateX() - 1);
+                this.setTranslateY(this.getTranslateY() + 1);
+            } else {
+                this.setTranslateX(this.getTranslateX() + 1);
+                this.setTranslateY(this.getTranslateY() - 1);
+            }
+        }
+    }
+
     public void rotateHero(double mouseX, double mouseY, double heroX, double heroY) {
-        double deltaX = mouseX - (heroX+55);
-        double deltaY = mouseY - (heroY+55);
+        double deltaX = mouseX - (heroX + 55);
+        double deltaY = mouseY - (heroY + 55);
         int angle = (int) ((360 + Math.toDegrees(Math.atan2(deltaY, deltaX))) % 360);
         this.setRotate(angle);
     }

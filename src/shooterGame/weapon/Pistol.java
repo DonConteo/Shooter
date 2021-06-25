@@ -129,11 +129,6 @@ public class Pistol extends Weapon {
     @Override
     public void shoot(){
         imageView.setImage(shoot);
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         imageView.setImage(calm);
     }
 }
